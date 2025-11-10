@@ -399,9 +399,7 @@ for both the JDBC driver and the reactive client,
 for instance `quarkus-jdbc-postgresql` *and* `quarkus-reactive-pg-client`.
 
 == Flyway on Kubernetes
-Sometimes, it's helpful not to execute Flyway initialization on each application startup. One such example is when deploying
-
-on Kubernetes, where it doesn't make sense to execute Flyway on every single replica. Instead it's desirable to execute it
+Sometimes, it's helpful not to execute Flyway initialization on each application startup. One such example is when deploying on Kubernetes, where it doesn't make sense to execute Flyway on every single replica. Instead it's desirable to execute it
 once and then start the actual application without Flyway. To support this use case, when generating manifests for Kubernetes
 the generated manifests contain a Kubernetes initialization `Job` for Flyway.
 The `Job` performs initialization and the actual `Pod`, will starts once the `Job` is successfully completed.
